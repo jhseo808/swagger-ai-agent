@@ -1,0 +1,43 @@
+{
+  "base_url": "https://petstore.swagger.io/v2",
+  "spec_path": "D:/jhseo/project/swagger-api/swagger/discovered_openapi.json",
+  "spec_origin": "https://petstore.swagger.io/v2/swagger.json",
+  "spec_mode": "direct",
+  "health": {
+    "ok": true,
+    "url": "https://petstore.swagger.io/v2",
+    "status_code": 404
+  },
+  "results": [
+    {
+      "test_file": "test_api.py",
+      "command": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -X utf8 -m pytest test_api.py -q --tb=short",
+      "returncode": 1,
+      "summary": "20개 실패 / 소요 시간 32.59s",
+      "facts": [
+        "+ Exception Group Traceback (most recent call last):",
+        "|     raise FailureGroup(_failures, message) from None",
+        "| schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure",
+        "|     TRACE returned 405 without required `Allow` header",
+        "| TRACE returned 405 without required `Allow` header"
+      ],
+      "inference": "동적 스키마 검사 중 HTTP 메서드 호환성 문제가 발견됐다. 실사용 시나리오 실패와는 분리해서 해석해야 한다.",
+      "log_path": "D:/jhseo/project/swagger-api/.openapi-ai-agent/last-run/test_api.log"
+    },
+    {
+      "test_file": "test_users_scenarios.py",
+      "command": "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -X utf8 -m pytest test_users_scenarios.py -q --tb=short",
+      "returncode": 0,
+      "summary": "9개 통과 / 소요 시간 10.72s",
+      "facts": [],
+      "inference": "",
+      "log_path": "D:/jhseo/project/swagger-api/.openapi-ai-agent/last-run/test_users_scenarios.log"
+    }
+  ],
+  "generated_files": [
+    "testcases.md",
+    "test_api.py",
+    "test_users_scenarios.py",
+    "test_report.md"
+  ]
+}

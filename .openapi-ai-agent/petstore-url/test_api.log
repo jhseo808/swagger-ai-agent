@@ -1,0 +1,837 @@
+FFFFFFFFFFFFFFFFFFFF                                                     [100%]
+================================== FAILURES ===================================
+___________________ test_api[POST /pet/{petId}/uploadImage] ___________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: multipart/form-data; boundary=3b304bb335754a2b28bed4c7dd90d65e' -d $'--fca6a4c463d449c12a8f2d002860cba8\r\nContent-Disposition: form-data; name="additionalMetadata"; filename="additionalMetadata"\r\n\r\n\r\n--fca6a4c463d449c12a8f2d002860cba8\r\nContent-Disposition: form-data; name="file"; filename="file"\r\n\r\n\r\n--fca6a4c463d449c12a8f2d002860cba8--\r\n' http://localhost/v2/pet/0/uploadImage
+  |     
+  |     ⚠️  Request body contains non-printable characters. Actual value: b'--fca6a4c463d449c12a8f2d002860cba8\r\nContent-Disposition: form-data; name="additionalMetadata"; filename="additionalMetadata"\r\n\r\n\r\n--fca6a4c463d449c12a8f2d002860cba8\r\nContent-Disposition: form-data; name="file"; filename="file"\r\n\r\n\r\n--fca6a4c463d449c12a8f2d002860cba8--\r\n'
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_____________________________ test_api[POST /pet] _____________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '{"category": {}, "id": 0, "name": "doggie", "photoUrls": [], "status": "sold", "tags": []}' http://localhost/v2/pet
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_____________________________ test_api[PUT /pet] ______________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '{"category": {}, "id": 0, "name": "doggie", "photoUrls": [], "status": "sold", "tags": []}' http://localhost/v2/pet
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_______________________ test_api[GET /pet/findByStatus] _______________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/pet/findByStatus
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+________________________ test_api[GET /pet/findByTags] ________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/pet/findByTags
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_________________________ test_api[GET /pet/{petId}] __________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Missing header not rejected
+  | 
+  |     Got 404 when missing required 'api_key' header, expected 422, 400, 401, 403, 406
+  | 
+  | [404] Not Found:
+  | 
+  |     `{"code":1,"type":"error","message":"Pet not found"}`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X GET http://localhost/v2/pet/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.MissingHeaderNotRejected: Missing header not rejected
+    | 
+    | Got 404 when missing required 'api_key' header, expected 422, 400, 401, 403, 406
+    +------------------------------------
+_________________________ test_api[POST /pet/{petId}] _________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/x-www-form-urlencoded' -d 'name=&status=' http://localhost/v2/pet/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+________________________ test_api[DELETE /pet/{petId}] ________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'api_key: [Filtered]' http://localhost/v2/pet/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_______________________ test_api[GET /store/inventory] ________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 3 distinct failures
+  | 
+  | - API accepted schema-violating request
+  | 
+  |     Invalid data should have been rejected
+  |     Expected: 400, 401, 403, 404, 406, 422, 428, 5xx
+  |     Invalid component: Missing `api_key` at header
+  | 
+  | - API accepts requests without authentication
+  | 
+  |     Expected 401, got `200 OK` for `GET /store/inventory`
+  | 
+  | - Missing header not rejected
+  | 
+  |     Got 200 when missing required 'api_key' header, expected 422, 400, 401, 403, 406
+  | 
+  | [200] OK:
+  | 
+  |     `{"Coming soon":1,"tersedia":1,"В активном ожидании":1,"sold ":1,"string":249,"pending":82,"available":466,"weisskeiner1":1,"https://ssrfpinger.aikidosec.com/uuid/set/53bcf32a-b18b-4b78-b6f5-368a6072c902_status":1,"Not Available":1,"soldout":1,"${sleep 15}\n":2,"dummy":4,"В активном поиске":1,"2'; SELECT pg_sleep(15) -- -":2,"`sleep 15`\n":2,"not available":1,"2'; SELECT SLEEP(15) -- -":2,"Available":1,"XSSsPLLufu":1,"1;sleep${IFS}15;#${IFS}';sleep${IFS}15;#${IFS}\";sleep${IFS}15;#${IFS}\n":2,"2; SELECT SLEE // Output truncated...`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X GET http://localhost/v2/store/inventory
+  | 
+  |  (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | schemathesis.core.failures.AcceptedNegativeData: API accepted schema-violating request
+    | 
+    | Invalid data should have been rejected
+    | Expected: 400, 401, 403, 404, 406, 422, 428, 5xx
+    | Invalid component: Missing `api_key` at header
+    +---------------- 2 ----------------
+    | schemathesis.openapi.checks.IgnoredAuth: API accepts requests without authentication
+    | 
+    | Expected 401, got `200 OK` for `GET /store/inventory`
+    +---------------- 3 ----------------
+    | schemathesis.openapi.checks.MissingHeaderNotRejected: Missing header not rejected
+    | 
+    | Got 200 when missing required 'api_key' header, expected 422, 400, 401, 403, 406
+    +------------------------------------
+_________________________ test_api[POST /store/order] _________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '{"complete": false, "id": 0, "petId": 0, "quantity": 0, "shipDate": "2000-01-01T00:00:00Z", "status": "placed"}' http://localhost/v2/store/order
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+____________________ test_api[GET /store/order/{orderId}] _____________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/store/order/1
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+___________________ test_api[DELETE /store/order/{orderId}] ___________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/store/order/1
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_____________________ test_api[POST /user/createWithList] _____________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '[]' http://localhost/v2/user/createWithList
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_______________________ test_api[GET /user/{username}] ________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/user/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+_______________________ test_api[PUT /user/{username}] ________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '{"email": "", "firstName": "", "id": 0, "lastName": "", "password": "", "phone": "", "userStatus": 0, "username": ""}' http://localhost/v2/user/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+______________________ test_api[DELETE /user/{username}] ______________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/user/0
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+__________________________ test_api[GET /user/login] __________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 3 distinct failures
+  | 
+  | - API accepted schema-violating request
+  | 
+  |     Invalid data should have been rejected
+  |     Expected: 400, 401, 403, 404, 406, 422, 428, 5xx
+  |     Invalid component: Missing `password` at query
+  | 
+  | - Response violates schema
+  | 
+  |     {"code":200,"message":"logged in user session:1773564881175","type":"unknown"} is not of type "string"
+  | 
+  |     Schema:
+  | 
+  |         {
+  |             "type": "string"
+  |         }
+  | 
+  |     Value:
+  | 
+  |         {
+  |             "code": 200,
+  |             "message": "logged in user session:1773564881175",
+  |             "type": "unknown"
+  |         }
+  | 
+  | - Response header does not conform to the schema
+  | 
+  |     "Sun Mar 15 09:54:41 UTC 2026" is not a "date-time"
+  | 
+  |     Schema:
+  | 
+  |         {
+  |             "format": "date-time",
+  |             "type": "string",
+  |             "description": "date in UTC when token expires"
+  |         }
+  | 
+  |     Value:
+  | 
+  |         "Sun Mar 15 09:54:41 UTC 2026"
+  | 
+  | [200] OK:
+  | 
+  |     `{"code":200,"type":"unknown","message":"logged in user session:1773564881175"}`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X GET 'http://localhost/v2/user/login?username='
+  | 
+  |  (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | schemathesis.core.failures.AcceptedNegativeData: API accepted schema-violating request
+    | 
+    | Invalid data should have been rejected
+    | Expected: 400, 401, 403, 404, 406, 422, 428, 5xx
+    | Invalid component: Missing `password` at query
+    +---------------- 2 ----------------
+    | schemathesis.openapi.checks.JsonSchemaError: Response violates schema
+    | 
+    | {"code":200,"message":"logged in user session:1773564881175","type":"unknown"} is not of type "string"
+    | 
+    | Schema:
+    | 
+    |     {
+    |         "type": "string"
+    |     }
+    | 
+    | Value:
+    | 
+    |     {
+    |         "code": 200,
+    |         "message": "logged in user session:1773564881175",
+    |         "type": "unknown"
+    |     }
+    +---------------- 3 ----------------
+    | schemathesis.openapi.checks.JsonSchemaError: Response header does not conform to the schema
+    | 
+    | "Sun Mar 15 09:54:41 UTC 2026" is not a "date-time"
+    | 
+    | Schema:
+    | 
+    |     {
+    |         "format": "date-time",
+    |         "type": "string",
+    |         "description": "date in UTC when token expires"
+    |     }
+    | 
+    | Value:
+    | 
+    |     "Sun Mar 15 09:54:41 UTC 2026"
+    +------------------------------------
+_________________________ test_api[GET /user/logout] __________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE http://localhost/v2/user/logout
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+____________________ test_api[POST /user/createWithArray] _____________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '[]' http://localhost/v2/user/createWithArray
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+____________________________ test_api[POST /user] _____________________________
++ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\schemathesis\generation\case.py", line 478, in validate_response
+  |     raise FailureGroup(_failures, message) from None
+  | schemathesis.core.failures.FailureGroup: Schemathesis found 1 distinct failure
+  | 
+  | - Unsupported methods
+  | 
+  |     TRACE returned 405 without required `Allow` header
+  | 
+  |     Add `Allow` header listing supported methods (required by RFC 9110)
+  | 
+  | [405] Method Not Allowed:
+  | 
+  |     `<html>
+
+  |     <head><title>405 Not Allowed</title></head>
+
+  |     <body>
+
+  |     <center><h1>405 Not Allowed</h1></center>
+
+  |     </body>
+
+  |     </html>`
+  | 
+  | Reproduce with:
+  | 
+  |     curl -X TRACE -H 'Content-Type: application/json' -d '{"email": "", "firstName": "", "id": 0, "lastName": "", "password": "", "phone": "", "userStatus": 0, "username": ""}' http://localhost/v2/user
+  | 
+  |  (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | schemathesis.openapi.checks.UnsupportedMethodResponse: Unsupported methods
+    | 
+    | TRACE returned 405 without required `Allow` header
+    | 
+    | Add `Allow` header listing supported methods (required by RFC 9110)
+    +------------------------------------
+=========================== short test summary info ===========================
+FAILED test_api.py::test_api[POST /pet/{petId}/uploadImage] - + Exception Gro...
+FAILED test_api.py::test_api[POST /pet] - + Exception Group Traceback (most r...
+FAILED test_api.py::test_api[PUT /pet] - + Exception Group Traceback (most re...
+FAILED test_api.py::test_api[GET /pet/findByStatus] - + Exception Group Trace...
+FAILED test_api.py::test_api[GET /pet/findByTags] - + Exception Group Traceba...
+FAILED test_api.py::test_api[GET /pet/{petId}] - + Exception Group Traceback ...
+FAILED test_api.py::test_api[POST /pet/{petId}] - + Exception Group Traceback...
+FAILED test_api.py::test_api[DELETE /pet/{petId}] - + Exception Group Traceba...
+FAILED test_api.py::test_api[GET /store/inventory] - + Exception Group Traceb...
+FAILED test_api.py::test_api[POST /store/order] - + Exception Group Traceback...
+FAILED test_api.py::test_api[GET /store/order/{orderId}] - + Exception Group ...
+FAILED test_api.py::test_api[DELETE /store/order/{orderId}] - + Exception Gro...
+FAILED test_api.py::test_api[POST /user/createWithList] - + Exception Group T...
+FAILED test_api.py::test_api[GET /user/{username}] - + Exception Group Traceb...
+FAILED test_api.py::test_api[PUT /user/{username}] - + Exception Group Traceb...
+FAILED test_api.py::test_api[DELETE /user/{username}] - + Exception Group Tra...
+FAILED test_api.py::test_api[GET /user/login] - + Exception Group Traceback (...
+FAILED test_api.py::test_api[GET /user/logout] - + Exception Group Traceback ...
+FAILED test_api.py::test_api[POST /user/createWithArray] - + Exception Group ...
+FAILED test_api.py::test_api[POST /user] - + Exception Group Traceback (most ...
+20 failed in 32.59s
+

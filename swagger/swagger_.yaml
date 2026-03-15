@@ -1,0 +1,450 @@
+openapi: 3.0.0
+
+info:
+  title: User Management API
+  version: 1.0.0
+  description: |
+    ## User Management REST API
+
+    사용자 리소스에 대한 CRUD 엔드포인트를 제공합니다.
+
+    ### 공통 응답 형식
+    ```json
+    { "success": true, "data": { ... } }
+    ```
+
+    ### 공통 에러 형식
+    ```json
+    { "success": false, "message": "에러 메시지", "code": "ERROR_CODE" }
+    ```
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local Development
+
+tags:
+  - name: Users
+    description: 사용자 관리 API
+
+components:
+  schemas:
+
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Alice Kim
+        email:
+          type: string
+          format: email
+          example: alice@example.com
+        role:
+          type: string
+          enum: [admin, user]
+          example: user
+        createdAt:
+          type: string
+          format: date-time
+          example: "2026-01-01T00:00:00.000Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2026-01-01T00:00:00.000Z"
+
+    UserCreateInput:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: David Choi
+        email:
+          type: string
+          format: email
+          example: david@example.com
+        role:
+          type: string
+          enum: [admin, user]
+          default: user
+          example: user
+
+    UserUpdateInput:
+      type: object
+      required:
+        - name
+        - email
+        - role
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: Alice Updated
+        email:
+          type: string
+          format: email
+          example: alice.updated@example.com
+        role:
+          type: string
+          enum: [admin, user]
+          example: admin
+
+    UserPatchInput:
+      type: object
+      minProperties: 1
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: Alice Renamed
+        email:
+          type: string
+          format: email
+          example: alice.new@example.com
+        role:
+          type: string
+          enum: [admin, user]
+          example: user
+
+    Pagination:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 3
+        page:
+          type: integer
+          example: 1
+        limit:
+          type: integer
+          example: 10
+        totalPages:
+          type: integer
+          example: 1
+
+    UserListResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/User"
+            pagination:
+              $ref: "#/components/schemas/Pagination"
+
+    UserResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        data:
+          $ref: "#/components/schemas/User"
+
+    MessageResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: User deleted successfully
+
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: User not found
+        code:
+          type: string
+          example: NOT_FOUND
+
+  parameters:
+    UserId:
+      name: id
+      in: path
+      required: true
+      description: 사용자 ID
+      schema:
+        type: integer
+        example: 1
+
+paths:
+
+  /users:
+    get:
+      tags: [Users]
+      summary: 사용자 목록 조회
+      description: 페이지네이션 및 검색을 지원하는 사용자 목록을 반환합니다.
+      parameters:
+        - name: page
+          in: query
+          description: "페이지 번호 (1부터 시작)"
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+            example: 1
+        - name: limit
+          in: query
+          description: 페이지당 항목 수
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 100
+            example: 10
+        - name: search
+          in: query
+          description: 이름 또는 이메일로 검색
+          schema:
+            type: string
+            example: alice
+      responses:
+        "200":
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserListResponse"
+              example:
+                success: true
+                data:
+                  items:
+                    - id: 1
+                      name: Alice Kim
+                      email: alice@example.com
+                      role: admin
+                      createdAt: "2026-01-01T00:00:00.000Z"
+                      updatedAt: "2026-01-01T00:00:00.000Z"
+                  pagination:
+                    total: 1
+                    page: 1
+                    limit: 10
+                    totalPages: 1
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    post:
+      tags: [Users]
+      summary: 사용자 생성
+      description: 새 사용자를 생성합니다. 이메일은 고유해야 합니다.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserCreateInput"
+            example:
+              name: David Choi
+              email: david@example.com
+              role: user
+      responses:
+        "201":
+          description: 생성 완료
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                success: false
+                message: name and email are required
+                code: VALIDATION_ERROR
+        "409":
+          description: 이메일 중복
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                success: false
+                message: Email already exists
+                code: CONFLICT
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /users/{id}:
+    get:
+      tags: [Users]
+      summary: 사용자 단건 조회
+      description: ID로 특정 사용자를 조회합니다.
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      responses:
+        "200":
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: 잘못된 ID 형식
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: 사용자 없음
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                success: false
+                message: User not found
+                code: NOT_FOUND
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    put:
+      tags: [Users]
+      summary: 사용자 전체 수정 (PUT)
+      description: |
+        사용자 정보를 전체 교체합니다.  
+        **name, email, role 모두 필수**입니다.
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserUpdateInput"
+            example:
+              name: Alice Updated
+              email: alice.updated@example.com
+              role: admin
+      responses:
+        "200":
+          description: 수정 완료
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: 사용자 없음
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    patch:
+      tags: [Users]
+      summary: 사용자 부분 수정 (PATCH)
+      description: |
+        사용자 정보를 일부만 수정합니다.  
+        제공된 필드만 업데이트되며, 나머지는 기존 값을 유지합니다.
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserPatchInput"
+            example:
+              name: Alice Renamed
+      responses:
+        "200":
+          description: 수정 완료
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+        "400":
+          description: 유효성 검사 실패
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: 사용자 없음
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    delete:
+      tags: [Users]
+      summary: 사용자 삭제
+      description: ID로 사용자를 영구 삭제합니다.
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      responses:
+        "200":
+          description: 삭제 완료
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+              example:
+                success: true
+                message: User deleted successfully
+        "404":
+          description: 사용자 없음
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: 서버 오류
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
